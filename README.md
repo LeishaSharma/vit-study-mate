@@ -1,18 +1,25 @@
-# VIT-STUDY-MATE
+# VIT-StudyMate
 
-**VIT-STUDY-MATE** is a Python-based CLI application designed to help students track their current academic performance and plan the marks required to achieve a target CGPA.
+**VIT-StudyMate** is a Python CLI utility designed to help students track their current academic performance and plan ahead by calculating required mark increases per subject to reach a targeted CGPA.
+
+---
 
 ## Features
 
-- **Attendance-Bonus Logic**: Automatically adds a 5-mark bonus to subjects where attendance exceeds 75% (capped at 50 marks maximum).
-- **Academic-Performance Overview**: Calculates and presents subject-wise raw marks, final marks, percentage, average percentage, and current CGPA in a clean tabular view.
-- **Target-CGPA Planning**: Calculates the percentage and mark increments needed to achieve a target CGPA.
-- **Smart-Mark Redistribution**: Redistributes excess marks to other subjects if a target score exceeds the maximum mark cap (50).
+- **Attendance Bonus Logic**: Automatically applies a +5 mark bonus for subjects with attendance above 75%, capped at a maximum of 50 marks.
+- **Academic Performance Summary**: Displays subject details, attendance, adjusted final marks, percentages, average percentage, and current CGPA.
+- **Target CGPA Analysis**:
+  - Calculates the overall percentage increase needed to reach a target CGPA.
+  - Generates required mark increases per subject.
+  - Automatically redistributes excess target marks when individual subject scores reach the maximum limit (50/50).
+- **Unit Testing**: Fully tested CLI interaction and mark distribution logic using Python's `unittest` and `unittest.mock`.
 
-## Project Structure
+---
+
+## File Structure
 
 ```text
-VIT-StudyMate/
-├── main.py                    # Program entry point and user input handler
-├── display_performance.py     # Calculates and displays current academic metrics
-└── calculate_target_cgpa.py   # Calculates mark adjustments for target CGPA
+├── calculate_target_cgpa.py   # Handles target CGPA calculations & mark redistribution
+├── display_performance.py    # Formats and displays current performance summary
+├── main.py                    # Application entry point and user input flow
+└── test_main.py               # Automated unit and integration tests
